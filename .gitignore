@@ -1,0 +1,11 @@
+# build/release files and directories
+build
+release
+*.o
+
+# project files
+*.pro
+
+# personal files
+_todo.txt
+
