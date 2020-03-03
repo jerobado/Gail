@@ -4,7 +4,6 @@ release
 *.o
 
 # project files
-*.pro
 
 # personal files
 _todo.txt
