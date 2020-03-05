@@ -4,6 +4,9 @@ release
 *.o
 
 # project files
+Makefile
+*.pro.user
+*qmake.stash
 
 # personal files
 _todo.txt
