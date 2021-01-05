@@ -1,14 +1,7 @@
-CONFIG += debug
-
-SOURCES += gail.cpp
-
-Debug:DESTDIR = build
-Release:DESTDIR = release/linux
-
+VERSION = 0.1.1
+TEMPLATE = app
+QT -= gui
+SOURCES = src/gail.cpp
 TARGET = gail
-
-# Additional files
-DISTFILES += \
-    .gitignore \
-    _todo.txt
-
+DESTDIR = build
+CONFIG = cmdline
