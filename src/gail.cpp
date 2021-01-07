@@ -39,6 +39,7 @@ void add_budget(double);
 void remove_budget(void);
 void count_budget(void);
 void show_help(string name);
+void compute_simple_budget(string amount_arg);
 
 
 int main(int argc, char **argv) {
@@ -52,6 +53,10 @@ int main(int argc, char **argv) {
         switch (opt)
         {
             case 1:
+
+                // test compute_simple_budget
+                compute_simple_budget(optarg);
+
                 if (strcmp(optarg, "add") == 0) {
                     printf("%s\n", argv[2]);
                 }
@@ -118,4 +123,20 @@ void show_help(string name)
          << "\t -h, --help\t\tDisplay this help message.\n"
          << "\t -v, --version\t\tDisplay application version information.\n"
          << endl;
+}
+
+
+void compute_simple_budget(string amount_arg)
+{
+    double amount = 0;
+    double savings = 0;
+    double balance = 0;
+    double savings_rate = 0.7;
+
+    amount = stod(amount_arg);
+    savings = amount * savings_rate;
+    balance = amount - savings;
+
+    printf("Savings: %.2f\n", savings);
+    printf("Balance: %.2f\n", balance);
 }
