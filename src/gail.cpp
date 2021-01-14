@@ -131,12 +131,44 @@ void compute_simple_budget(string amount_arg)
     double amount = 0;
     double savings = 0;
     double balance = 0;
+    
+    double enjoy_fund;
+    double gerona_fund;
+    double gift_fund;
+    double business_fund;
+    double cash_fund;
+
+    double food;
+    
     double savings_rate = 0.7;
+    double enjoy_fund_rate = 0.1428;
+    double gerona_fund_rate = 0.1428;
+    double gift_fund_rate = 0.1428;
+    double business_fund_rate = 0.1;
+    double cash_fund_rate = 0.6144;
 
     amount = stod(amount_arg);
     savings = amount * savings_rate;
-    balance = amount - savings;
+    
+    // compute each fund based on savings
+    enjoy_fund = savings * enjoy_fund_rate;
+    gerona_fund = (savings * gerona_fund_rate) / 2;
+    gift_fund = (savings * gift_fund_rate) / 2;
+    business_fund = savings * business_fund_rate;
+    cash_fund = savings * cash_fund_rate - 3000;
 
-    printf("Savings: %.2f\n", savings);
-    printf("Balance: %.2f\n", balance);
+    // compute expenses
+    food = 3000;
+
+    balance = amount - (enjoy_fund + gerona_fund + gift_fund + business_fund + cash_fund + food) - 3000;
+
+    printf("Enjoy Fund: %.2f\n", enjoy_fund);
+    printf("Gerona Foundation Fund: %.2f\n", gerona_fund);
+    printf("Gift Fund: %.2f\n", gift_fund);
+    printf("Business Machine Fund: %.2f\n", business_fund);
+    printf("Cash Machine Fund: %.2f\n", cash_fund);
+    printf("\n");
+    printf("Food: %.2f\n", food);
+    printf("\n");
+    printf("Remaining: %.2f\n", balance);
 }
