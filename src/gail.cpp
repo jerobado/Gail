@@ -21,6 +21,7 @@
 #include <getopt.h>
 #include <unistd.h>
 #include <iostream>
+#include <iomanip>
 #include <stdio.h>
 #include <string.h>
 #include <queue>
@@ -162,13 +163,14 @@ void compute_simple_budget(string amount_arg)
 
     balance = amount - (enjoy_fund + gerona_fund + gift_fund + business_fund + cash_fund + food) - 3000;
 
-    printf("Enjoy Fund: %.2f\n", enjoy_fund);
-    printf("Gerona Foundation Fund: %.2f\n", gerona_fund);
-    printf("Gift Fund: %.2f\n", gift_fund);
-    printf("Business Machine Fund: %.2f\n", business_fund);
-    printf("Cash Machine Fund: %.2f\n", cash_fund);
+    cout << "Allocation" << setw(26) << "Amount" << "\n\n";
+    printf("Enjoy Fund: %*.2f\n", 25, enjoy_fund);
+    printf("Gerona Foundation Fund: %*.2f\n", 13, gerona_fund);
+    printf("Gift Fund: %*.2f\n", 26, gift_fund);
+    printf("Business Machine Fund: %*.2f\n", 14, business_fund);
+    printf("Cash Machine Fund: %*.2f\n", 18, cash_fund);
     printf("\n");
-    printf("Food: %.2f\n", food);
+    printf("Food: %*.2f\n", 31, food);
     printf("\n");
-    printf("Remaining: %.2f\n", balance);
+    printf("Remaining: %*.2f\n", 26, balance);
 }
