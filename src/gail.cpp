@@ -102,6 +102,7 @@ int main(int argc, char **argv) {
 void add_budget(double latest_salary)
 {
     BUDGET.push(latest_salary);
+    printf("BUDGET.size(): %ld\n", BUDGET.size());
 }
 
 void remove_budget()
